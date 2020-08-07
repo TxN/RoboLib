@@ -25,6 +25,22 @@ CRGB             cLeds[NUM_LEDS];
 ControlableMotor Motors[MOTOR_COUNT];
 VL53L0X          ranger;
 
+void FastCycle(unsigned long loopMillis);
+void SlowCycle(unsigned long loopMillis);
+void UpdateRanger();
+void UpdateBatteryVoltage();
+void UpdateMotors();
+void COMM_RECV_ANY_CALLBACK();
+void COMM_STATUS_CALLBACK();
+void COMM_LED_SET_CALLBACK();
+void COMM_LED_SET_COLOR_ALL_CALLBACK();
+void COMM_FLASHLIGHT_CALLBACK();
+void COMM_MOTOR_GET_SPEED_CALLBACK();
+void COMM_MOTOR_GET_TICKS_CALLBACK();
+void COMM_MOTOR_SET_MOVEMENT_CALLBACK();
+void COMM_RANGE_GET_CALLBACK();
+void COMM_BATTERY_VOLTAGE_GET_CALLBACK();
+
 void MotorATick() {
   Motors[0].Tick();
 }
